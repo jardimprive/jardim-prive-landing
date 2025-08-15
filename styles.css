@@ -118,6 +118,7 @@ body {
     justify-content: center;
     text-align: center;
     color: var(--white);
+    padding-top: 80px; /* Adicionando espaço para o header fixo */
 }
 
 .hero-background {
@@ -263,6 +264,9 @@ section {
     border-radius: 15px;
     box-shadow: 0 10px 30px var(--shadow);
     margin-bottom: 15px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .comparison-item p {
@@ -327,6 +331,9 @@ section {
     object-fit: cover;
     border-radius: 15px;
     margin-bottom: 20px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
 .price-comparison {
