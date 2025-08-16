@@ -279,21 +279,3 @@ window.addEventListener('scroll', debouncedScroll);
 
 
 
-// Ajuste dinâmico do espaçamento da seção principal
-function adjustMainContentPadding() {
-    const headerFixed = document.querySelector(".header-fixed");
-    const heroSection = document.querySelector(".hero-section");
-    if (headerFixed && heroSection) {
-        const headerHeight = headerFixed.offsetHeight;
-        heroSection.style.paddingTop = `${headerHeight}px`;
-    }
-}
-
-// Chamar a função ao carregar a página e ao redimensionar
-window.addEventListener("load", adjustMainContentPadding);
-window.addEventListener("resize", adjustMainContentPadding);
-
-// Chamar também após o DOMContentLoaded para garantir que o header já esteja renderizado
-document.addEventListener("DOMContentLoaded", adjustMainContentPadding);
-
-
