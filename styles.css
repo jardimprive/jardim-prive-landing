@@ -218,6 +218,7 @@ section {
 /* Seção Conceito */
 .concept-section {
     background: var(--light-gray);
+    margin-top: 80px; /* Adicionado para empurrar a seção para baixo */
 }
 
 .concept-content {
