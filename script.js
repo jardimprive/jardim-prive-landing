@@ -125,16 +125,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Lazy loading para imagens
-    const images = document.querySelectorAll('img');
+    const images = document.querySelectorAll("img");
     const imageObserver = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 0.3s ease';
+                img.style.opacity = "0";
+                img.style.transition = "opacity 0.3s ease";
                 
                 img.onload = function() {
-                    this.style.opacity = '1';
+                    this.style.opacity = "1";
                 };
                 
                 imageObserver.unobserve(img);
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Efeito de digitação no título principal
     function typeWriter(element, text, speed = 100) {
         let i = 0;
-        element.textContent = '';
+        element.textContent = "";
         
         function type() {
             if (i < text.length) {
@@ -164,11 +164,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Aplicar efeito de digitação ao título hero após um delay
     setTimeout(() => {
-        const heroTitle = document.querySelector('.hero-title');
+        const heroTitle = document.querySelector(".hero-title");
         const originalText = heroTitle.textContent;
         typeWriter(heroTitle, originalText, 80);
     }, 500);
-    
+
     // Adicionar efeito de parallax sutil ao hero
     window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
@@ -258,50 +258,3 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
-    // Aplicar debounce ao scroll
-    const debouncedScroll = debounce(function() {
-        // Lógica de scroll otimizada
-    }, 10);
-
-    window.addEventListener("scroll", debouncedScroll);
-
-    // Efeito de digitação no título principal
-    function typeWriter(element, text, speed = 100) {
-        let i = 0;
-        element.textContent = "";
-        
-        function type() {
-            if (i < text.length) {
-                element.textContent += text.charAt(i);
-                i++;
-                setTimeout(type, speed);
-            }
-        }
-        
-        type();
-    }
-    
-    // Aplicar efeito de digitação ao título hero após um delay
-    setTimeout(() => {
-        const heroTitle = document.querySelector(".hero-title");
-        const originalText = heroTitle.textContent;
-        typeWriter(heroTitle, originalText, 80);
-    }, 500);
-
-    // Função para rolar suavemente para a próxima seção
-    function scrollToSection() {
-        const conceptSection = document.querySelector("#conceito");
-        if (conceptSection) {
-            conceptSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        } else {
-            // Se não encontrar a seção conceito, rola para baixo uma tela
-            window.scrollBy({
-                top: window.innerHeight,
-                behavior: "smooth"
-            });
-        }
-    }
-
