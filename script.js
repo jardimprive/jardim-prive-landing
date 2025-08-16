@@ -259,53 +259,55 @@ function debounce(func, wait) {
     };
 }
 
-// Aplicar debounce ao scroll
-const debouncedScroll = debounce(function() {
-    // Lógica de scroll otimizada
-}, 10);
+    // Aplicar debounce ao scroll
+    const debouncedScroll = debounce(function() {
+        // Lógica de scroll otimizada
+    }, 10);
 
-window.addEventListener("scroll", debouncedScroll);
+    window.addEventListener("scroll", debouncedScroll);
 
-
-});
-
-// Efeito de digitação no título principal
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.textContent = "";
+    // Efeito de digitação no título principal
+    function typeWriter(element, text, speed = 100) {
+        let i = 0;
+        element.textContent = "";
+        
+        function type() {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
+        
+        type();
+    }
     
-    function type() {
-        if (i < text.length) {
-            element.textContent += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
+    // Aplicar efeito de digitação ao título hero após um delay
+    setTimeout(() => {
+        const heroTitle = document.querySelector(".hero-title");
+        const originalText = heroTitle.textContent;
+        typeWriter(heroTitle, originalText, 80);
+    }, 500);
+
+    // Função para rolar suavemente para a próxima seção
+    function scrollToSection() {
+        const conceptSection = document.querySelector("#conceito");
+        if (conceptSection) {
+            conceptSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        } else {
+            // Se não encontrar a seção conceito, rola para baixo uma tela
+            window.scrollBy({
+                top: window.innerHeight,
+                behavior: "smooth"
+            });
         }
     }
-    
-    type();
-}
 
-// Aplicar efeito de digitação ao título hero após um delay
-setTimeout(() => {
-    const heroTitle = document.querySelector(".hero-title");
-    const originalText = heroTitle.textContent;
-    typeWriter(heroTitle, originalText, 80);
-}, 500);
+    // Tornar a função scrollToSection global para ser acessível pelo onclick
+    window.scrollToSection = scrollToSection;
 
-// Função para rolar suavemente para a próxima seção
-function scrollToSection() {
-    const conceptSection = document.querySelector('#conceito');
-    if (conceptSection) {
-        conceptSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    } else {
-        // Se não encontrar a seção conceito, rola para baixo uma tela
-        window.scrollBy({
-            top: window.innerHeight,
-            behavior: 'smooth'
-        });
-    }
-}
+});
 
