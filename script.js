@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observar elementos para animação
-    const animatedElements = document.querySelectorAll('.benefit-item, .testimonial-item, .product-category');
+    const animatedElements = document.querySelectorAll(".benefit-item, .testimonial-item, .product-category, .section-header h2, .section-header p");
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -291,3 +291,21 @@ setTimeout(() => {
     const originalText = heroTitle.textContent;
     typeWriter(heroTitle, originalText, 80);
 }, 500);
+
+// Função para rolar suavemente para a próxima seção
+function scrollToSection() {
+    const conceptSection = document.querySelector('#conceito');
+    if (conceptSection) {
+        conceptSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    } else {
+        // Se não encontrar a seção conceito, rola para baixo uma tela
+        window.scrollBy({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        });
+    }
+}
+

@@ -173,7 +173,7 @@ body {
     color: var(--primary-green);
     padding: 18px 40px;
     border-radius: 50px;
-    text-decoration: none;
+    border: none;
     font-size: 1.2rem;
     font-weight: 700;
     transition: all 0.3s ease;
@@ -181,8 +181,8 @@ body {
     box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
     position: relative;
     z-index: 999999 !important;
-    pointer-events: auto !important;
     cursor: pointer !important;
+    font-family: inherit;
 }
 
 .cta-button-large:hover {
