@@ -114,11 +114,11 @@ body {
     height: 100vh;
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Mudar de center para flex-start */
     justify-content: center;
     text-align: center;
     color: var(--white);
-    padding-top: 150px; /* Aumentar espaçamento para compensar header fixo */
+    padding-top: 200px; /* Aumentar espaçamento para compensar header fixo */
 }
 
 .hero-background {
@@ -643,7 +643,7 @@ section {
     }
     
     .hero-section {
-        padding-top: 180px; /* Maior espaçamento para mobile */
+        padding-top: 250px; /* Aumentar drasticamente para mobile */
     }
     
     .hero-title {
