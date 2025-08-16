@@ -118,7 +118,7 @@ body {
     justify-content: center;
     text-align: center;
     color: var(--white);
-    padding-top: 100px; /* Ajuste para o header fixo */
+    padding-top: 120px; /* Ajuste para o header fixo */
 }
 
 .hero-background {
@@ -649,7 +649,7 @@ section {
     }
     
     .hero-section {
-        padding-top: 170px; /* Ajuste para mobile */
+        padding-top: 190px; /* Ajuste para mobile */
     }
     
     .hero-title {
