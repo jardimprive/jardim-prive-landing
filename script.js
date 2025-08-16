@@ -229,18 +229,7 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
     
-    // Adicionar loading state aos links do WhatsApp
-    const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
-    whatsappLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            const originalText = this.innerHTML;
-            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Conectando...';
-            
-            setTimeout(() => {
-                this.innerHTML = originalText;
-            }, 2000);
-        });
-    });
+
 });
 
 // Função para detectar dispositivo móvel
