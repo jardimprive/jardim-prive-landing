@@ -258,7 +258,6 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
-
     // Aplicar debounce ao scroll
     const debouncedScroll = debounce(function() {
         // Lógica de scroll otimizada
@@ -305,9 +304,4 @@ function debounce(func, wait) {
             });
         }
     }
-
-    // Tornar a função scrollToSection global para ser acessível pelo onclick
-    window.scrollToSection = scrollToSection;
-
-});
 
