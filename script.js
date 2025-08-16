@@ -271,28 +271,30 @@ window.addEventListener('scroll', debouncedScroll);
 
 
 // Garantir que o botão principal funcione
-document.addEventListener('DOMContentLoaded', function() {
-    const botaoPrincipal = document.querySelector('.cta-button-large');
+document.addEventListener("DOMContentLoaded", function() {
+    const botaoPrincipal = document.querySelector(".cta-button-large");
     if (botaoPrincipal) {
-        // Remover qualquer event listener que possa estar interferindo
-        botaoPrincipal.style.pointerEvents = 'auto';
-        botaoPrincipal.style.zIndex = '999999';
-        botaoPrincipal.style.position = 'relative';
-        
+        // Remover quaisquer event listeners existentes para evitar duplicação
+        const newButton = botaoPrincipal.cloneNode(true);
+        botaoPrincipal.parentNode.replaceChild(newButton, botaoPrincipal);
+
         // Adicionar event listener para garantir funcionamento
-        botaoPrincipal.addEventListener('click', function(e) {
-            e.stopPropagation();
-            console.log('Botão clicado!', this.href);
-            window.open(this.href, '_blank');
+        newButton.addEventListener("click", function(e) {
+            e.preventDefault(); // Previne o comportamento padrão do link
+            e.stopPropagation(); // Impede a propagação do evento
+            console.log("Botão principal clicado! Redirecionando para:", this.href);
+            window.open(this.href, "_blank");
         });
-        
+
         // Adicionar event listener para touch em dispositivos móveis
-        botaoPrincipal.addEventListener('touchstart', function(e) {
-            e.stopPropagation();
-            console.log('Botão tocado!', this.href);
+        newButton.addEventListener("touchstart", function(e) {
+            e.preventDefault(); // Previne o comportamento padrão do link
+            e.stopPropagation(); // Impede a propagação do evento
+            console.log("Botão principal tocado! Redirecionando para:", this.href);
+            window.open(this.href, "_blank");
         });
-        
-        console.log('Botão principal configurado:', botaoPrincipal.href);
+
+        console.log("Botão principal configurado e pronto para uso:", newButton.href);
     }
 });
 
