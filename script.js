@@ -267,34 +267,4 @@ const debouncedScroll = debounce(function() {
 window.addEventListener('scroll', debouncedScroll);
 
 
-
-
-
-// Garantir que o botão principal funcione
-document.addEventListener("DOMContentLoaded", function() {
-    const botaoPrincipal = document.querySelector(".cta-button-large");
-    if (botaoPrincipal) {
-        // Remover quaisquer event listeners existentes para evitar duplicação
-        const newButton = botaoPrincipal.cloneNode(true);
-        botaoPrincipal.parentNode.replaceChild(newButton, botaoPrincipal);
-
-        // Adicionar event listener para garantir funcionamento
-        newButton.addEventListener("click", function(e) {
-            e.preventDefault(); // Previne o comportamento padrão do link
-            e.stopPropagation(); // Impede a propagação do evento
-            console.log("Botão principal clicado! Redirecionando para:", this.href);
-            window.open(this.href, "_blank");
-        });
-
-        // Adicionar event listener para touch em dispositivos móveis
-        newButton.addEventListener("touchstart", function(e) {
-            e.preventDefault(); // Previne o comportamento padrão do link
-            e.stopPropagation(); // Impede a propagação do evento
-            console.log("Botão principal tocado! Redirecionando para:", this.href);
-            window.open(this.href, "_blank");
-        });
-
-        console.log("Botão principal configurado e pronto para uso:", newButton.href);
-    }
 });
-
