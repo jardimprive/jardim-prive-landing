@@ -649,7 +649,7 @@ section {
     }
     
     .hero-section {
-        padding-top: 120px !important;
+        padding-top: 150px !important; /* Aumentado para compensar o header fixo */
     }
     
     .hero-title {
