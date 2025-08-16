@@ -264,7 +264,30 @@ const debouncedScroll = debounce(function() {
     // Lógica de scroll otimizada
 }, 10);
 
-window.addEventListener('scroll', debouncedScroll);
+window.addEventListener("scroll", debouncedScroll);
 
 
 });
+
+// Efeito de digitação no título principal
+function typeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.textContent = "";
+    
+    function type() {
+        if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    
+    type();
+}
+
+// Aplicar efeito de digitação ao título hero após um delay
+setTimeout(() => {
+    const heroTitle = document.querySelector(".hero-title");
+    const originalText = heroTitle.textContent;
+    typeWriter(heroTitle, originalText, 80);
+}, 500);
