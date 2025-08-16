@@ -1,7 +1,7 @@
 // Smooth Scrolling para links de navegação
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling para links internos
-    const navLinks = document.querySelectorAll('a[href^="#"]');
+    // Smooth scrolling para links internos (apenas para links de navegação)
+    const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
