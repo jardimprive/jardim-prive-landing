@@ -163,11 +163,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Aplicar efeito de digitação ao título hero após um delay
-    setTimeout(() => {
-        const heroTitle = document.querySelector('.hero-title');
-        const originalText = heroTitle.textContent;
-        typeWriter(heroTitle, originalText, 80);
-    }, 500);
+    // setTimeout(() => {
+    //     const heroTitle = document.querySelector('.hero-title');
+    //     const originalText = heroTitle.textContent;
+    //     typeWriter(heroTitle, originalText, 80);
+    // }, 500);
     
     // Adicionar efeito de parallax sutil ao hero
     window.addEventListener('scroll', function() {
