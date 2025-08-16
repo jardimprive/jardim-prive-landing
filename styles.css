@@ -23,13 +23,6 @@ body {
     line-height: 1.6;
     color: var(--dark-gray);
     overflow-x: hidden;
-    padding-top: 80px; /* Espaço para o header fixo em desktop */
-}
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 100px; /* Espaço para o header fixo em mobile */
-    }
 }
 
 .container {
@@ -656,7 +649,7 @@ section {
     }
     
     .hero-section {
-        /* padding-top ajustado no body */
+        padding-top: 150px; /* Ajuste para mobile */
     }
     
     .hero-title {
