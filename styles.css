@@ -118,7 +118,7 @@ body {
     justify-content: center;
     text-align: center;
     color: var(--white);
-    padding-top: 120px; /* Ajuste para o header fixo */
+    padding-top: 80px; /* Adicionando espaço para o header fixo */
 }
 
 .hero-background {
@@ -218,7 +218,6 @@ section {
 /* Seção Conceito */
 .concept-section {
     background: var(--light-gray);
-    margin-top: 80px; /* Adicionado para empurrar a seção para baixo */
 }
 
 .concept-content {
@@ -650,7 +649,7 @@ section {
     }
     
     .hero-section {
-        padding-top: 190px; /* Ajuste para mobile */
+        padding-top: 150px; /* Ajuste para mobile */
     }
     
     .hero-title {
