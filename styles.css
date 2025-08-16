@@ -146,7 +146,8 @@ body {
 .hero-content {
     max-width: 800px;
     padding: 0 20px;
-    z-index: 9999;
+    z-index: 999999 !important;
+    position: relative;
 }
 
 .hero-title {
@@ -179,8 +180,9 @@ body {
     margin-bottom: 20px;
     box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
     position: relative;
-    z-index: 99999;
-    pointer-events: auto;
+    z-index: 999999 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
 }
 
 .cta-button-large:hover {

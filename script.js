@@ -268,3 +268,31 @@ window.addEventListener('scroll', debouncedScroll);
 
 
 
+
+
+// Garantir que o botão principal funcione
+document.addEventListener('DOMContentLoaded', function() {
+    const botaoPrincipal = document.querySelector('.cta-button-large');
+    if (botaoPrincipal) {
+        // Remover qualquer event listener que possa estar interferindo
+        botaoPrincipal.style.pointerEvents = 'auto';
+        botaoPrincipal.style.zIndex = '999999';
+        botaoPrincipal.style.position = 'relative';
+        
+        // Adicionar event listener para garantir funcionamento
+        botaoPrincipal.addEventListener('click', function(e) {
+            e.stopPropagation();
+            console.log('Botão clicado!', this.href);
+            window.open(this.href, '_blank');
+        });
+        
+        // Adicionar event listener para touch em dispositivos móveis
+        botaoPrincipal.addEventListener('touchstart', function(e) {
+            e.stopPropagation();
+            console.log('Botão tocado!', this.href);
+        });
+        
+        console.log('Botão principal configurado:', botaoPrincipal.href);
+    }
+});
+
