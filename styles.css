@@ -140,7 +140,6 @@ body {
     bottom: 0;
     background: linear-gradient(135deg, rgba(45, 80, 22, 0.8), rgba(74, 124, 89, 0.6));
     z-index: -1;
-    pointer-events: none; /* Adicionado para permitir cliques através do overlay */
 }
 
 .hero-content {
