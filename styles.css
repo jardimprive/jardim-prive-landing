@@ -177,6 +177,8 @@ body {
     transition: all 0.3s ease;
     margin-bottom: 20px;
     box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    position: relative;
+    z-index: 10;
 }
 
 .cta-button-large:hover {
